@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <template id="todo-add">
+      <div>
+        <input type="text" v-model="title" />
+        <button @click="onClick">Añadir</button>
+      </div>
+    </template>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"
+      integrity="sha512-njMD8/lt6qrl5S7BFajlL1KztlxeFyLYq/rkt395asAA8dz8uZaNU5VcAxL1DwZul9dmJk+or3HbjafV107ODA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      Vue.component("todo-add", {
+        template: '#todo-add',
+        data: function () {
+          return {
+            title: null,
+          };
+        },
+        methods: {
+          onClick: function () {
+            this.$emit("new", { title: this.title });
+          },
+        },
+      });
+
+      Vue.component("todo-item", {
+        props: ["todo"],
+        template: `<li>{{ todo.title }}</li>`,
+      });
+
+      Vue.component("todo-list", {
+        props: ["todos"],
+        template: `
+          <ul>
+            <todo-item
+              v-for="(todo, index) in todos"
+              :key="index"
+              :todo="todo">
+            </todo-item>
+          </ul>
+        `,
+      });
+
+      const app = new Vue({
+        el: "#app",
+        data: {
+          todos: [
+            { title: "Task 1", complete: false },
+            { title: "Task 2", complete: false },
+            { title: "Task 3", complete: false },
+          ],
+        },
+        template: `
+          <div>
+            <todo-list :todos="todos"></todo-list>
+            <todo-add @new="addNewTodo" />
+          </div>
+        `,
+        methods: {
+          addNewTodo: function (todo) {
+            this.todos.push(todo);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
