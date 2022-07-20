@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="changeVisibility">Mostrar/Ocultar</button>
+      <ul v-show="mostrar">
+        <tv-show-list />
+        <!-- <button v-on:click="changeVisibility">Mostrar/Ocultar</button> -->
+
+        <!-- La directiva v-show, culta el elemento con un: display = none, diferente que la directiva v-if que no renderiza el elemento -->
+        <!-- <ul v-if="mostrar"> -->
+
+        <!-- <li v-for="(show, index) in tvshows" v-bind:key="index"> -->
+        <!-- <li v-for="(show, index) in tvshows" :key="index">
+          <strong>{{ show.name }}</strong> ({{ show.seasons }} Temporadas)
+        </li> -->
+      </ul>
+      <!-- <div v-dihe="mostrar"> -->
+      <div v-else>No hay datos</div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"
+      integrity="sha512-njMD8/lt6qrl5S7BFajlL1KztlxeFyLYq/rkt395asAA8dz8uZaNU5VcAxL1DwZul9dmJk+or3HbjafV107ODA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      Vue.component("tv-show-list", {
+        data: function () {
+          return {
+            tvshows: [
+              { name: "Game of Trhones", seasons: 8 },
+              { name: " Breaking Bad", seasons: 5 },
+              { name: "LOST", seasons: 6 },
+              { name: "Battlestar Gala", seasons: 4 },
+            ],
+          };
+        },
+        template: `
+          <ul>
+            <tv-show
+              v-for="(show, index) in tvshows"
+              :key="index"
+              :name="show.name"
+              :seasons="show.seasons">
+            </tv-show>
+          </ul>
+        `,
+      });
+
+      Vue.component("tv-show", {
+        props: {
+          name: String,
+          seasons: Number,
+        },
+        template: `
+          <li>
+            <strong>{{ name }}</strong> ({{ seasons }} Temporadas)
+          </li>
+        `,
+      });
+
+      const app = new Vue({
+        el: "#app",
+        data: {
+          mostrar: false,
+        },
+        methods: {
+          changeVisibility: function () {
+            this.mostrar = !this.mostrar;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

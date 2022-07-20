@@ -1,0 +1,155 @@
+{
+  "workbench.colorTheme": "Dobri Next -A05- Jaguar",
+  "editor.wordWrap": "on",
+  "explorer.confirmDragAndDrop": false,
+  "editor.codeLensFontFamily": "JetBrains Mono Medium Italic",
+  "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.iconTheme": "vscode-icons",
+  "svelte.enable-ts-plugin": true,
+  "[handlebars]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#ff6433",
+      "activityBar.activeBorder": "#00ff3d",
+      "activityBar.background": "#ff6433",
+      "activityBar.foreground": "#15202b",
+      "activityBar.inactiveForeground": "#15202b99",
+      "activityBarBadge.background": "#00ff3d",
+      "activityBarBadge.foreground": "#15202b",
+      "sash.hoverBorder": "#ff6433",
+      "statusBar.background": "#ff3d00",
+      "statusBar.foreground": "#e7e7e7",
+      "statusBarItem.hoverBackground": "#ff6433",
+      "statusBarItem.remoteBackground": "#ff3d00",
+      "statusBarItem.remoteForeground": "#e7e7e7",
+      "titleBar.activeBackground": "#ff3d00",
+      "titleBar.activeForeground": "#e7e7e7",
+      "titleBar.inactiveBackground": "#ff3d0099",
+      "titleBar.inactiveForeground": "#e7e7e799",
+      "[Material Theme Darker High Contrast]": {
+          "activityBarBadge.background": "#84FFFF",
+          "activityBar.activeBorder": "#84FFFF",
+          "list.activeSelectionForeground": "#84FFFF",
+          "list.inactiveSelectionForeground": "#84FFFF",
+          "list.highlightForeground": "#84FFFF",
+          "scrollbarSlider.activeBackground": "#84FFFF50",
+          "editorSuggestWidget.highlightForeground": "#84FFFF",
+          "textLink.foreground": "#84FFFF",
+          "progressBar.background": "#84FFFF",
+          "pickerGroup.foreground": "#84FFFF",
+          "tab.activeBorder": "#84FFFF",
+          "notificationLink.foreground": "#84FFFF",
+          "editorWidget.resizeBorder": "#84FFFF",
+          "editorWidget.border": "#84FFFF",
+          "settings.modifiedItemIndicator": "#84FFFF",
+          "settings.headerForeground": "#84FFFF",
+          "panelTitle.activeBorder": "#84FFFF",
+          "breadcrumb.activeSelectionForeground": "#84FFFF",
+          "menu.selectionForeground": "#84FFFF",
+          "menubar.selectionForeground": "#84FFFF",
+          "editor.findMatchBorder": "#84FFFF",
+          "selection.background": "#84FFFF40",
+          "statusBarItem.remoteBackground": "#84FFFF"
+      },
+      "[Material Theme Ocean High Contrast]": {
+          "activityBarBadge.background": "#FF7042",
+          "activityBar.activeBorder": "#FF7042",
+          "list.activeSelectionForeground": "#FF7042",
+          "list.inactiveSelectionForeground": "#FF7042",
+          "list.highlightForeground": "#FF7042",
+          "scrollbarSlider.activeBackground": "#FF704250",
+          "editorSuggestWidget.highlightForeground": "#FF7042",
+          "textLink.foreground": "#FF7042",
+          "progressBar.background": "#FF7042",
+          "pickerGroup.foreground": "#FF7042",
+          "tab.activeBorder": "#FF7042",
+          "notificationLink.foreground": "#FF7042",
+          "editorWidget.resizeBorder": "#FF7042",
+          "editorWidget.border": "#FF7042",
+          "settings.modifiedItemIndicator": "#FF7042",
+          "settings.headerForeground": "#FF7042",
+          "panelTitle.activeBorder": "#FF7042",
+          "breadcrumb.activeSelectionForeground": "#FF7042",
+          "menu.selectionForeground": "#FF7042",
+          "menubar.selectionForeground": "#FF7042",
+          "editor.findMatchBorder": "#FF7042",
+          "selection.background": "#FF704240",
+          "statusBarItem.remoteBackground": "#FF7042"
+      }
+  },
+  "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "materialTheme.accent": "Orange",
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+      "*": true,
+      "yaml": false,
+      "plaintext": false,
+      "markdown": false,
+      "javascript": false,
+      "python": true,
+      "css": false,
+      "html": false,
+      "vue": false,
+      "typescript": false,
+      "sql": false,
+      "javascriptreact": false,
+      "scss": false,
+      "astro": false
+  },
+  "workbench.editorAssociations": {
+      "*.ipynb": "jupyter-notebook"
+  },
+  "notebook.cellToolbarLocation": {
+      "default": "right",
+      "jupyter-notebook": "left"
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "editor.fontFamily": "Jet",
+  "editor.fontLigatures":  true,
+  "editor.fontSize": 18,
+  "git.autofetch": true,
+  "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 2,
+  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+  "terminal.integrated.fontSize": 11,
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // "doki.background.path": "C:\\Users\\Jesus\\Desktop\\Doki\\background.png",
+  "doki.sticker.path": "C:\\Users\\Jesus\\Desktop\\Doki\\sticker3.png",
+  "doki.wallpaper.path": "C:\\Users\\Jesus\\Desktop\\Doki\\wallpaper2.png",
+  // "doki.background.anchor": "center",
+  "doki.statusbar.name": "Jujutsu Kaisen",
+  "doki.background.enabled": false,
+  "editor.fontWeight": "bold",
+}
