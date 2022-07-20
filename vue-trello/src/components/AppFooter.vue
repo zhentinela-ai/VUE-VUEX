@@ -8,6 +8,8 @@ export default {
 }
 </script>
 
+<!-- Node-Sass y Sass-Loader, deben tener versiones compatibles entre sí -->
+<!-- Además Node-Sass ya esta en desuso en su lugar se utiliza Sass, pero si se prefiere Node-Sass, aquí más información: https://i.stack.imgur.com/ZJtyS.png -->
 <style lang="scss" scoped>
   footer {
     box-sizing: border-box;
