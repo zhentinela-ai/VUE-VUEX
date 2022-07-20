@@ -7,23 +7,7 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="app">
-      <button @click="changeVisibility">Mostrar/Ocultar</button>
-      <ul v-show="mostrar">
-        <tv-show-list />
-        <!-- <button v-on:click="changeVisibility">Mostrar/Ocultar</button> -->
-
-        <!-- La directiva v-show, culta el elemento con un: display = none, diferente que la directiva v-if que no renderiza el elemento -->
-        <!-- <ul v-if="mostrar"> -->
-
-        <!-- <li v-for="(show, index) in tvshows" v-bind:key="index"> -->
-        <!-- <li v-for="(show, index) in tvshows" :key="index">
-          <strong>{{ show.name }}</strong> ({{ show.seasons }} Temporadas)
-        </li> -->
-      </ul>
-      <!-- <div v-dihe="mostrar"> -->
-      <div v-else>No hay datos</div>
-    </div>
+    <div id="app"></div>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"
@@ -32,49 +16,61 @@
       referrerpolicy="no-referrer"
     ></script>
     <script>
-      Vue.component("tv-show-list", {
+      Vue.component("todo-add", {
+        template: `
+          <div>
+            <input type="text" v-model="title" />
+            <button @click="onClick">Añadir</button>
+          </div>
+        `,
         data: function () {
           return {
-            tvshows: [
-              { name: "Game of Trhones", seasons: 8 },
-              { name: " Breaking Bad", seasons: 5 },
-              { name: "LOST", seasons: 6 },
-              { name: "Battlestar Gala", seasons: 4 },
-            ],
+            title: null,
           };
         },
-        template: `
-          <ul>
-            <tv-show
-              v-for="(show, index) in tvshows"
-              :key="index"
-              :name="show.name"
-              :seasons="show.seasons">
-            </tv-show>
-          </ul>
-        `,
+        methods: {
+          onClick: function () {
+            this.$emit("new", { title: this.title });
+          },
+        },
       });
 
-      Vue.component("tv-show", {
-        props: {
-          name: String,
-          seasons: Number,
-        },
+      Vue.component("todo-item", {
+        props: ["todo"],
+        template: `<li>{{ todo.title }}</li>`,
+      });
+
+      Vue.component("todo-list", {
+        props: ["todos"],
         template: `
-          <li>
-            <strong>{{ name }}</strong> ({{ seasons }} Temporadas)
-          </li>
+          <ul>
+            <todo-item
+              v-for="(todo, index) in todos"
+              :key="index"
+              :todo="todo">
+            </todo-item>
+          </ul>
         `,
       });
 
       const app = new Vue({
         el: "#app",
         data: {
-          mostrar: false,
+          todos: [
+            { title: "Task 1", complete: false },
+            { title: "Task 2", complete: false },
+            { title: "Task 3", complete: false },
+          ],
         },
+        template: `
+          <div>
+            <todo-list :todos="todos"></todo-list>
+            <todo-add @new="addNewTodo" />
+          </div>
+        `,
         methods: {
-          changeVisibility: function () {
-            this.mostrar = !this.mostrar;
+          addNewTodo: function (todo) {
+            this.todos.push(todo);
           },
         },
       });
