@@ -2,6 +2,7 @@
   <div>
     <h3>Mis Paneles
       <div class="boards-collection">
+        <span v-if="fetchingData">Cargando...</span>
         <input type="text"
         placeholder="Añade un nuevo panel"
         v-model="boardName"
@@ -19,6 +20,7 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 import BoardCard from '@/components/BoardCard'
 
 export default {
@@ -26,17 +28,26 @@ export default {
   components: { BoardCard },
   data () {
     return {
-      boardName: '',
-      boards: [
-        { id: '1', name: 'Taks' },
-        { id: '2', name: 'Shopping list' }
-      ]
+      boardName: ''
     }
   },
+  computed: {
+    ...mapState([
+      'boards',
+      'fetchingData'
+    ])
+  },
   methods: {
+    ...mapActions([
+      'fetchBoards',
+      'addBoard'
+    ]),
     add () {
-      this.boards.push({ name: this.boardName })
+      this.addBoard({ name: this.boardName })
     }
+  },
+  created () {
+    this.fetchBoards({ user: 1 })
   }
 }
 </script>

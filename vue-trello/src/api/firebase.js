@@ -1,7 +1,7 @@
-import * as firebase from 'firebase'
+import * as app from 'firebase/app'
 import settings from './setting'
 
-const firebaseApp = firebase.initializeApp(settings)
+const firebaseApp = app.initializeApp(settings)
 
 export const db = firebaseApp.database()
 
