@@ -3,15 +3,30 @@
     <header>
       <h3>{{ name }}</h3>
     </header>
+    <task-list
+      :listId="listId"
+      :tasks="tasksList"
+    ></task-list>
   </section>
 </template>
 
 <script>
+import TaskList from './TasksList'
+
 export default {
   name: 'column',
+  components: { TaskList },
   props: {
     listId: String,
     name: String
+  },
+  data () {
+    return {
+      tasksList: [
+        { id: '1', title: 'Aprende Vue', completed: false },
+        { id: '1', title: 'Aprende Vuex', completed: false }
+      ]
+    }
   }
 }
 </script>
