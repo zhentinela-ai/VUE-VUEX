@@ -1,9 +1,11 @@
 /vue-trello/.DS_Store
 /vue-trello/node_modules/
 /vue-trello/dist/
+/vue-trello/src/api/setting.js
 /vue-trello/npm-debug.log*
 /vue-trello/yarn-debug.log*
 /vue-trello/yarn-error.log*
+
 
 # Editor directories and files
 /vue-trello/.idea
